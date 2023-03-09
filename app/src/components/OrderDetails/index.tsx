@@ -1,30 +1,17 @@
-import Menu from "components/Menu";
+//nao sei se estar certo acho esse codigo é no order details
 import { ReactComponent as Search } from "assets/icons/search.svg";
-import { DateTime } from "luxon";
 import * as S from "./style";
-import { RoutePath } from "types/router";
-import { navigationItems } from "data/navigation";
-import ProductItemList from "components/ProductItemList";
-import ProductItem from "components/ProductItem";
-import OrderDetails from "components/OrderDetails";
-import Overlay from "components/Overley";
 
 const Home = () => {
-  const dateDescription = DateTime.now().toLocaleString({
-    ...DateTime.DATE_SHORT,
-    weekday: "long",
-  });
-
   return (
     <S.Home>
-      <Menu active={RoutePath.HOME} navItems={navigationItems} />
       <S.HomeContent>
         <header>
           <S.HomeHeaderDetails>
             <div>
               <S.HomeHeaderDetailsLogo>Pizza Fresh</S.HomeHeaderDetailsLogo>
               <S.HomeHeaderDetailsDate>
-                {dateDescription}
+                Aqui ficará a data
               </S.HomeHeaderDetailsDate>
             </div>
             <S.HomeHeaderDetailsSearch>
@@ -38,20 +25,16 @@ const Home = () => {
             <b>Pizzas</b>
           </S.HomeProductTitle>
           <S.HomeProductList>
-            <ProductItemList>
-              <ProductItem />
-            </ProductItemList>
+            <p>Lista de produtos aqui</p>
           </S.HomeProductList>
         </div>
       </S.HomeContent>
       <aside>
-        <OrderDetails />
+        <p>Detalhes dos pedidos aqui</p>
       </aside>
-      <Overlay>
-
-      </Overlay>
     </S.Home>
   );
 };
 
 export default Home;
+
